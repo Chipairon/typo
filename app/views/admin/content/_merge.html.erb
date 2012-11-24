@@ -1,0 +1,14 @@
+<% if current_user.admin? %>
+  <div class=''>
+    <h4><%= _("Merge Articles") %></h4>
+    <div class='class'>
+      <%= form_tag({ :controller => "admin/content", :action=>"merge", :id=>params[:id]}, :method => "post") do  %>
+        <label for="merge">Article Id:</label>
+      <%= text_field_tag 'merge_with' %>
+      <%= submit_tag "Merge"  %> 
+    <% end %>
+    </div>
+  </div>
+<% end %>
+
+
